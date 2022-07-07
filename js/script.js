@@ -17,11 +17,25 @@ let pokemonList = [
 ];
 
 
-for (i=0; i < pokemonList.length; i++) {
-	document.write(`${pokemonList[i].name} (height: ${pokemonList[i].height}) `);
-  if (pokemonList[i].height > 0.6) {
+pokemonList.forEach(function(listObject) {
+  document.write(`Name: ${listObject.name} (Height: ${listObject.height})`);
+  if (listObject.height > 0.6) {
     document.write('- Wow, that\'s big!<br><br>');
   } else {
     document.write('<br><br>');
   }
-}
+});
+
+
+
+
+
+
+// for (i=0; i < pokemonList.length; i++) {
+// 	document.write(`${pokemonList[i].name} (height: ${pokemonList[i].height}) `);
+//   if (pokemonList[i].height > 0.6) {
+//     document.write('- Wow, that\'s big!<br><br>');
+//   } else {
+//     document.write('<br><br>');
+//   }
+// }
