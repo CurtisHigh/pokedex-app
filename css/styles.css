@@ -29,3 +29,23 @@ body {
   text-align: center;
   margin: 20px;
 }
+
+.pokemon-list {
+  list-style: none;
+  padding: 0;
+}
+
+.name-button {
+  background-color: gray;
+  margin: 2px;
+  font-family: sans-serif;
+  transition-duration: 0.2s;
+  padding: 5px;
+  border-radius: 4px;
+  border-bottom: 2px solid black;
+}
+
+.name-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

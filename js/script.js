@@ -25,36 +25,28 @@ let pokemonRepository = (function() {
     return pokemonList;
   }
 
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('name-button');
+    listItem.appendChild(button);
+    pokemonList.appendChild(listItem);
+    button.addEventListener('click', showDetails(pokemon));
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-  document.write(`Name: ${pokemon.name} (Height: ${pokemon.height})`);
-  if (pokemon.height > 0.6) {
-    document.write('- Wow, that\'s big!<br><br>');
-  } else {
-    document.write('<br><br>');
-  }
+  pokemonRepository.addListItem(pokemon);
 });
-
-
-
-
-// pokemonRepository.add({name: 'Bulbasaur', height: 0.7, types: ['monster','grass']});
-//
-// pokemonRepository.add({name: 'Charmander', height: 0.6, types: ['monster','dragon']});
-//
-// pokemonRepository.add({name: 'Squirtle', height: 0.5, types: ['monster','water']});
-
-
-// for (i=0; i < pokemonList.length; i++) {
-// 	document.write(`${pokemonList[i].name} (height: ${pokemonList[i].height}) `);
-//   if (pokemonList[i].height > 0.6) {
-//     document.write('- Wow, that\'s big!<br><br>');
-//   } else {
-//     document.write('<br><br>');
-//   }
-// }
